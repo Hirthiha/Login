@@ -1,9 +1,6 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import Login from "./Screen/Login";
 import Main from "./Screen/Main";
 import Signup from "./Screen/Signup";
-import Style from "./Stylesheet/Style";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./Screen/Home";

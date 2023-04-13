@@ -1,18 +1,17 @@
-import React, { useState } from "react";
-import { View, Image, TextInput, Text, Pressable } from "react-native";
-import Style from "../Stylesheet/Style";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Password } from "./Password";
+import React, {useState} from 'react';
+import {View, Image, TextInput, Text, Pressable} from 'react-native';
+import Style from '../Stylesheet/Style';
+import {MaterialCommunityIcons} from '@expo/vector-icons';
+import {Password} from './Password';
 
-export default function Login({ navigation }) {
-  const { passwordvisibility, rightIcon, handlePasswordVisibility } =
-    Password();
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+export default function Login({navigation}) {
+  const {passwordvisibility, rightIcon, handlePasswordVisibility} = Password();
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
   const [checkPasswordvalid, setCheckpasswordvalid] = useState(false);
   const [checkEmailvalid, setCheckemailvalid] = useState(false);
 
-  const handleCheckemail = (text) => {
+  const handleCheckemail = text => {
     var emailcheck = /^[a-z0-9_\.]*[@][a-z]+[\.][a-z]{2,3}$/;
     setEmail(text);
     if (emailcheck.test(text)) {
@@ -22,7 +21,7 @@ export default function Login({ navigation }) {
     }
   };
 
-  const handleCheckpassword = (pass) => {
+  const handleCheckpassword = pass => {
     var passwordcheck =
       /^(?=.*[0-9])(?=.*[!@#$%^&*._])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*._]{8,18}$/;
     setPassword(pass);
@@ -38,15 +37,14 @@ export default function Login({ navigation }) {
       <View style={Style.loginview}>
         <Image
           style={Style.img}
-          source={require("../assets/logo-og.png")}
-        ></Image>
+          source={require('../assets/logo-og.png')}></Image>
         <Text style={Style.welcome}>Welcome </Text>
         <TextInput
           style={Style.input}
           placeholder="Email"
           placeholderTextColor="lightgrey"
           value={email}
-          onChangeText={(text) => handleCheckemail(text)}
+          onChangeText={text => handleCheckemail(text)}
         />
         {checkEmailvalid ? (
           <Text style={Style.error}>**Please Enter a valid Email</Text>
@@ -61,15 +59,11 @@ export default function Login({ navigation }) {
             placeholderTextColor="lightgrey"
             secureTextEntry={passwordvisibility}
             value={password}
-            onChangeText={(pass) => handleCheckpassword(pass)}
+            onChangeText={pass => handleCheckpassword(pass)}
           />
           <View style={Style.icon}>
             <Pressable onPress={handlePasswordVisibility}>
-              <MaterialCommunityIcons
-                name={rightIcon}
-                size={22}
-                color="#232323"
-              />
+              <Image source={require('../assets/Eye-Icon.png')}></Image>
             </Pressable>
           </View>
         </View>
@@ -84,16 +78,15 @@ export default function Login({ navigation }) {
 
         <Text style={Style.forgot}>Forgot your password?</Text>
         <Pressable>
-          <Text style={Style.login} onPress={() => navigation.navigate("Home")}>
+          <Text style={Style.login} onPress={() => navigation.navigate('Home')}>
             Login
           </Text>
         </Pressable>
-        <Text style={{ marginTop: 10 }}>
+        <Text style={{marginTop: 10}}>
           Don't have an account?
           <Text
-            style={{ color: "#3399FF" }}
-            onPress={() => navigation.navigate("SignUp")}
-          >
+            style={{color: '#3399FF'}}
+            onPress={() => navigation.navigate('SignUp')}>
             Sign Up
           </Text>
         </Text>
