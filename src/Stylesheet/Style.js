@@ -1,11 +1,11 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 const Style = StyleSheet.create({
   container: {
-    // flex: 1,
-    // backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center",
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   img: {
@@ -15,8 +15,8 @@ const Style = StyleSheet.create({
 
   inside: {
     width: 400,
-    height: 500,
-    alignItems: "center",
+    height: 400,
+    alignItems: 'center',
     marginTop: 180,
   },
 
@@ -25,11 +25,11 @@ const Style = StyleSheet.create({
     marginRight: 20,
     width: 240,
     height: 39,
-    color: "white",
-    backgroundColor: "#3399FF",
-    textAlign: "center",
+    color: 'white',
+    backgroundColor: '#3399FF',
+    textAlign: 'center',
     paddingTop: 10,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
 
   signup: {
@@ -37,12 +37,12 @@ const Style = StyleSheet.create({
     width: 240,
     marginRight: 20,
     height: 39,
-    color: "#3399FF",
-    textAlign: "center",
+    color: '#3399FF',
+    textAlign: 'center',
     paddingTop: 10,
-    borderColor: "grey",
+    borderColor: 'grey',
     borderWidth: 2,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
 
   input: {
@@ -50,7 +50,7 @@ const Style = StyleSheet.create({
     marginRight: 20,
     width: 240,
     height: 50,
-    borderColor: "lightgray",
+    borderColor: 'lightgray',
     borderWidth: 2,
     paddingLeft: 5,
   },
@@ -59,7 +59,7 @@ const Style = StyleSheet.create({
     marginTop: 10,
     width: 240,
     height: 50,
-    borderColor: "lightgray",
+    borderColor: 'lightgray',
     borderWidth: 2,
     paddingLeft: 5,
   },
@@ -67,7 +67,7 @@ const Style = StyleSheet.create({
   loginview: {
     width: 400,
     height: 500,
-    alignItems: "center",
+    alignItems: 'center',
     marginTop: 115,
   },
 
@@ -78,24 +78,24 @@ const Style = StyleSheet.create({
   },
 
   welcome: {
-    color: "#3399FF",
+    color: '#3399FF',
     marginTop: 10,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
 
   eye: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 
   icon: {
-    position: "relative",
+    position: 'relative',
     right: 30,
     top: 5,
   },
 
   error: {
-    color: "red",
+    color: 'red',
     marginRight: 60,
   },
 });

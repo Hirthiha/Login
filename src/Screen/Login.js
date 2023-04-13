@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Image, TextInput, Text, Pressable} from 'react-native';
 import Style from '../Stylesheet/Style';
-import {MaterialCommunityIcons} from '@expo/vector-icons';
+import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Password} from './Password';
 
 export default function Login({navigation}) {
@@ -11,6 +11,7 @@ export default function Login({navigation}) {
   const [checkPasswordvalid, setCheckpasswordvalid] = useState(false);
   const [checkEmailvalid, setCheckemailvalid] = useState(false);
 
+  //Email validation
   const handleCheckemail = text => {
     var emailcheck = /^[a-z0-9_\.]*[@][a-z]+[\.][a-z]{2,3}$/;
     setEmail(text);
@@ -20,7 +21,7 @@ export default function Login({navigation}) {
       setCheckemailvalid(true);
     }
   };
-
+  //Password validation
   const handleCheckpassword = pass => {
     var passwordcheck =
       /^(?=.*[0-9])(?=.*[!@#$%^&*._])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*._]{8,18}$/;
@@ -35,9 +36,7 @@ export default function Login({navigation}) {
   return (
     <View style={Style.container}>
       <View style={Style.loginview}>
-        <Image
-          style={Style.img}
-          source={require('../assets/logo-og.png')}></Image>
+        <Image style={Style.img} source={require('../assets/logo-og.png')} />
         <Text style={Style.welcome}>Welcome </Text>
         <TextInput
           style={Style.input}
@@ -46,6 +45,7 @@ export default function Login({navigation}) {
           value={email}
           onChangeText={text => handleCheckemail(text)}
         />
+        {/* email error */}
         {checkEmailvalid ? (
           <Text style={Style.error}>**Please Enter a valid Email</Text>
         ) : (
@@ -63,10 +63,11 @@ export default function Login({navigation}) {
           />
           <View style={Style.icon}>
             <Pressable onPress={handlePasswordVisibility}>
-              <Image source={require('../assets/Eye-Icon.png')}></Image>
+              <Icons name={rightIcon} color="black" size={20} />
             </Pressable>
           </View>
         </View>
+        {/* Password error */}
         {checkPasswordvalid ? (
           <Text style={Style.error}>
             **Please enter password atleast 8 characters with number,special
